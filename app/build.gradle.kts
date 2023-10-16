@@ -60,10 +60,10 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.3.0")
 
     // Koin
-    implementation("org.koin:koin-androidx-scope:2.2.2")
-    implementation("org.koin:koin-androidx-viewmodel:2.2.2")
-    implementation("org.koin:koin-androidx-fragment:2.2.2")
-    implementation("org.koin:koin-androidx-workmanager:2.2.2")
+    implementation("io.insert-koin:koin-androidx-scope:2.2.2")
+    implementation("io.insert-koin:koin-androidx-viewmodel:2.2.2")
+    implementation("io.insert-koin:koin-androidx-fragment:2.2.2")
+    implementation("io.insert-koin:koin-androidx-workmanager:2.2.2")
 
     //glide
     implementation("com.github.bumptech.glide:glide:4.12.0")
