@@ -1,14 +1,15 @@
 package com.app.exploradorfilmes.di
 
 import com.app.exploradorfilmes.data.remote.MoviesAPI
+import com.app.exploradorfilmes.presentation.MainViewModel
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 val retrofitModule = module {
     factory <Interceptor>{
@@ -37,5 +38,11 @@ val retrofitModule = module {
 val apiModule = module {
     single (createdAtStart = false) {
         get<Retrofit>().create(MoviesAPI::class.java)
+    }
+}
+
+val viewModelModule = module {
+    viewModel {
+        MainViewModel(get())
     }
 }
